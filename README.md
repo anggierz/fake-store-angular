@@ -1,27 +1,51 @@
-# FakeStoreAngular
+# 🛍️ Fake Store Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+Una tienda online de ejemplo construida con **Angular**, utilizando la API pública [Fake Store API](https://fakestoreapi.com/). Este proyecto simula una experiencia real de ecommerce con navegación por categorías, listado de productos y detalles individuales. Este proyecto es la resolución a la actividad Datos, pipes y despliegues de la asignatura Desarrollo front con frameworks II del Máster de Desarrollo Web de la UEM.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Características
 
-## Code scaffolding
+- 🔹 Listado de categorías
+- 🔹 Productos por categoría
+- 🔹 Vista detallada del producto
+- 🔹 Navegación con Angular Router
+- 🔹 Estilizado con SCSS y paleta personalizada (Coolors)
+- 🔹 Adaptado para una experiencia visual moderna y responsive
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 🛠️ Tecnologías utilizadas
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Angular 17+](https://angular.io/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [SCSS](https://sass-lang.com/)
+- [Fake Store API](https://fakestoreapi.com/)
+- [Montserrat](https://fonts.google.com/specimen/Montserrat) como fuente principal
+- Diseño personalizado con [Coolors](https://coolors.co/16bac5-5fbff9-efe9f4-171d1c-5863f8)
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 📦 Instalación
 
-## Running end-to-end tests
+1. **Clona el repositorio**:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+git clone https://github.com/anggierz/fake-store-angular.git
+cd fake-store-angular
+```
 
-## Further help
+2. **Instala las dependencias**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install
+```
+
+3. **Ejecuta el proyecto en desarrollo**:
+
+```bash
+ng serve
+```
+
+Abre `http://localhost:4200` en el navegador para visualizar la tienda.
+
