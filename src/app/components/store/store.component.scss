@@ -7,17 +7,38 @@ $text-dark: #171d1c;
 $accent: #5863f8;
 
 .home {
-    font-family: 'Montserrat', sans-serif;
-    background-color: $background;
+  font-family: 'Montserrat', sans-serif;
+  background-color: $background;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 0.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: darken($text-dark, 10%);
+    margin-bottom: 2rem;
+  }
 }
 
 .category-list {
-  font-family: 'Montserrat', sans-serif;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   padding: 1.5rem;
-  background-color: $background;
+  background-color: lighten($background, 2%);
   border-radius: 1rem;
   box-shadow: 0 4px 8px rgba($text-dark, 0.1);
 
