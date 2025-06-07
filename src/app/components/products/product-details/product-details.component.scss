@@ -6,61 +6,101 @@ $background: #efe9f4;
 $text-dark: #171d1c;
 $accent: #5863f8;
 
-.product-card {
+.product-page {
   font-family: 'Montserrat', sans-serif;
-  background-color: white;
-  border-radius: 1.25rem;
-  box-shadow: 0 6px 16px rgba($text-dark, 0.1);
+  background-color: $background;
+  min-height: 100vh;
   padding: 2rem;
-  max-width: 600px;
-  margin: 2rem auto;
-  text-align: center;
-  transition: box-shadow 0.3s ease;
 
-  &:hover {
-    box-shadow: 0 10px 20px rgba($text-dark, 0.15);
-  }
-
-  .product-details {
+  .top-bar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
   }
 
-  .product-image {
-    margin-bottom: 1.5rem;
+  .btn-return {
+    background-color: $primary;
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 
-    img {
-      width: 200px;
-      height: auto;
-      border-radius: 0.75rem;
-      object-fit: contain;
+    &:hover {
+      background-color: $accent;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba($secondary, 0.5);
     }
   }
 
-  .product-title {
-    font-size: 1.5rem;
-    font-weight: 600;
+  .loading-text,
+  .not-found-text {
+    font-size: 1.2rem;
     color: $text-dark;
-    margin-bottom: 1rem;
+    text-align: center;
+    margin-top: 4rem;
   }
 
-  .product-description {
-    font-size: 1rem;
-    color: darken($text-dark, 10%);
-    margin-bottom: 1.25rem;
-    line-height: 1.6;
-  }
+  .product-card {
+    background-color: white;
+    border-radius: 1.25rem;
+    box-shadow: 0 6px 16px rgba($text-dark, 0.1);
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
 
-  .product-price {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: $accent;
-  }
+    &:hover {
+      box-shadow: 0 10px 20px rgba($text-dark, 0.15);
+    }
 
-  .product-rating {
-    margin-top: 1rem;
-    color: $secondary;
-    font-weight: 500;
+    .product-details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .product-image {
+      margin-bottom: 1.5rem;
+
+      img {
+        width: 200px;
+        height: auto;
+        border-radius: 0.75rem;
+        object-fit: contain;
+      }
+    }
+
+    .product-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-dark;
+      margin-bottom: 1rem;
+    }
+
+    .product-description {
+      font-size: 1rem;
+      color: darken($text-dark, 10%);
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .product-price {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: $accent;
+    }
+
+    .product-rating {
+      margin-top: 1rem;
+      color: $secondary;
+      font-weight: 500;
+    }
   }
 }

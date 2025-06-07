@@ -1,20 +1,25 @@
-<button class="btn-return" (click)="backClicked()">Volver</button>
-@if (loading) {
-    <p>Loading...</p>
-} @else {
+<div class="product-page">
+  <div class="top-bar">
+    <button class="btn-return" (click)="backClicked()">Volver</button>
+  </div>
+
+  @if (loading) {
+    <p class="loading-text">Loading...</p>
+  } @else {
     @if (producto) {
-        <div class="product-card">
-          <div class="product-details">
-            <figure class="product-image">
-              <img [src]="producto?.image" [alt]="producto?.description" />
-            </figure>
-            <h2 class="product-title">{{ producto?.title }}</h2>
-            <p class="product-description">{{ producto?.description }}</p>
-            <p class="product-price">{{ producto?.price | currency : "EUR" }}</p>
-            <p class="product-rating">Product rate: {{ producto?.rating?.rate }}</p>
-          </div>
+      <div class="product-card">
+        <div class="product-details">
+          <figure class="product-image">
+            <img [src]="producto.image" [alt]="producto.description" />
+          </figure>
+          <h2 class="product-title">{{ producto.title }}</h2>
+          <p class="product-description">{{ producto.description }}</p>
+          <p class="product-price">{{ producto.price | currency : "EUR" }}</p>
+          <p class="product-rating">Product rate: {{ producto.rating.rate }}</p>
         </div>
+      </div>
     } @else {
-        <h3>Product does not exist</h3>
+      <h3 class="not-found-text">Product does not exist</h3>
     }
-}
+  }
+</div>
