@@ -1,1 +1,11 @@
-<p>products works!</p>
+<div class="container-products">
+    @for (product of productsByCategory; track $index) {
+    <div>
+        <figure>
+            <img [src]="product.image" [alt]="product.description" style="width: 200px" />
+        </figure>
+        {{ product.title }}
+        {{product.price | currency : "EUR"  }}
+    </div>
+    }
+</div>
