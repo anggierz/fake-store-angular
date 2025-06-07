@@ -1,14 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Product } from '../../interfaces/store.interface';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { StoreService } from '../../services/store.service';
 import { OnInit } from '@angular/core';
 import { CurrencyPipe } from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, RouterLink],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss'
 })
@@ -20,7 +21,7 @@ export class ProductsComponent implements OnInit {
    categorySearch: string | null = null;
    
 
-   constructor(private storeService: StoreService, private route: ActivatedRoute) {}
+   constructor(private storeService: StoreService, private route: ActivatedRoute, private location: Location) {}
 
    ngOnInit(): void {
       this.categorySearch = this.route.snapshot.paramMap.get('category');
@@ -36,4 +37,8 @@ export class ProductsComponent implements OnInit {
         }
       });
    }
+
+   backClicked() {
+    this.location.back();
+  }
 }

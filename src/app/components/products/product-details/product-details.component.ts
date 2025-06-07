@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { StoreService } from '../../../services/store.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../../../interfaces/store.interface';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product-details',
@@ -16,8 +17,9 @@ export class ProductDetailsComponent implements OnInit {
 
   producto: Product | null = null;
   id: string | null = '';
+  loading: boolean = true;
 
-     constructor(private storeService: StoreService, private route: ActivatedRoute) {}
+     constructor(private storeService: StoreService, private route: ActivatedRoute, private location: Location) {}
   
      ngOnInit(): void {
         this.id = this.route.snapshot.paramMap.get('id');
@@ -25,7 +27,9 @@ export class ProductDetailsComponent implements OnInit {
           this.storeService.getProductById(this.id).subscribe({
             next: (product) => {
               this.producto = product;
+              this.loading = false;
               console.log(this.producto);
+              console.log(this.producto?.rating.rate);
             },
             error: (err) => {
               console.error('Error fetching product:', err);
@@ -35,4 +39,8 @@ export class ProductDetailsComponent implements OnInit {
           console.error('Product ID is null');
         }
 }
+
+backClicked() {
+    this.location.back();
+  }
 }

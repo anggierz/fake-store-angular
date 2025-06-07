@@ -1,11 +1,20 @@
-<div class="product-card">
-    <div>
-        <figure>
-            <img [src]="producto?.image" [alt]="producto?.description" style="width: 200px" />
-        </figure>
-        {{ producto?.title }}
-        {{ producto?.description }}
-        {{producto?.price | currency : "EUR"  }}
-        <!-- {{ producto?.rating[0].rate }} -->
-    </div>
-</div>
+<button class="btn-return" (click)="backClicked()">Volver</button>
+@if (loading) {
+    <p>Loading...</p>
+} @else {
+    @if (producto) {
+        <div class="product-card">
+          <div class="product-details">
+            <figure class="product-image">
+              <img [src]="producto?.image" [alt]="producto?.description" />
+            </figure>
+            <h2 class="product-title">{{ producto?.title }}</h2>
+            <p class="product-description">{{ producto?.description }}</p>
+            <p class="product-price">{{ producto?.price | currency : "EUR" }}</p>
+            <p class="product-rating">Product rate: {{ producto?.rating?.rate }}</p>
+          </div>
+        </div>
+    } @else {
+        <h3>Product does not exist</h3>
+    }
+}
