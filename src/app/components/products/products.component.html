@@ -1,11 +1,11 @@
 <div class="container-products">
-    @for (product of productsByCategory; track $index) {
-    <div>
-        <figure>
-            <img [src]="product.image" [alt]="product.description" style="width: 200px" />
-        </figure>
-        {{ product.title }}
-        {{product.price | currency : "EUR"  }}
+  @for (product of productsByCategory; track $index) {
+    <div class="product-card">
+      <figure class="product-image">
+        <img [src]="product.image" [alt]="product.description" width="200px"/>
+      </figure>
+      <h3 class="product-title">{{ product.title }}</h3>
+      <p class="product-price">{{ product.price | currency : "EUR" }}</p>
     </div>
-    }
+  }
 </div>

@@ -1,1 +1,11 @@
-<p>product-details works!</p>
+<div class="product-card">
+    <div>
+        <figure>
+            <img [src]="producto?.image" [alt]="producto?.description" style="width: 200px" />
+        </figure>
+        {{ producto?.title }}
+        {{ producto?.description }}
+        {{producto?.price | currency : "EUR"  }}
+        <!-- {{ producto?.rating[0].rate }} -->
+    </div>
+</div>
